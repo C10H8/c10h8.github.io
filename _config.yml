@@ -1,0 +1,120 @@
+# Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
+# Site
+title: 墨迹’  Blog
+subtitle:
+description: Life and Day
+author: Ben
+language: zh-Hans
+timezone: Asia/Shanghai
+# 博客关键字
+keywords: 后端工程师,Java, Python, 量化爱好者
+
+
+# URL
+## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
+url: http://moji.github.io
+root: /
+permalink: :year/:month/:day/:title/
+permalink_defaults:
+
+avatar: https://avatars3.githubusercontent.com/u/12567339?s=400&u=1e67fd1c031e1f9571fa0898b6127eeb803f2bb6&v=4
+
+# Directory
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+
+# Writing
+new_post_name: :year/:month/:title.md # File name of new posts
+default_layout: post
+titlecase: false # Transform title into titlecase
+external_link: false # Open external links in new tab
+filename_case: 0
+render_drafts: false
+post_asset_folder: true
+relative_link: false
+future: true
+highlight:
+  enable: true
+  line_number: true
+  auto_detect: false
+  tab_replace: true
+toc:
+  maxDepth: 3
+
+# 数学公式
+mathjax: true      
+
+# Category & Tag
+default_category: uncategorized
+category_map:
+tag_map:
+tag_generator:
+  per_page: 15
+archive_generator:
+  per_page: 15
+  yearly: true
+  monthly: true
+
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+
+# Pagination
+## Set per_page to 0 to disable pagination
+per_page: 15
+pagination_dir: page
+
+#sitemap
+sitemap:
+  path: sitemap.xml
+
+baidusitemap:
+  path: baidusitemap.xml
+
+
+# Minify HTML files with HTMLMinifier
+# Docs: https://github.com/hexojs/hexo-html-minifier
+html_minifier:
+  exclude:
+
+# Markdown config
+marked:
+  gfm: true
+  pedantic: false
+  sanitize: false
+  tables: true
+  breaks: true
+  smartLists: true
+  smartypants: true
+
+# Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+#theme: landscape
+theme: next
+
+# 微搜索
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
+
+# Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+  type: git
+  repository: https://github.com/C10H8/c10h8.github.io.git
+  branch: master
