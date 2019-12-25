@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>cat+springboot初体验 | 墨迹’  Blog</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="cat+springboot初体验 | 墨迹’  Blog">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta property="og:type" content="website">
+<meta property="og:title" content="墨迹’  Blog">
+<meta property="og:url" content="http://cuijianlong.github.io/404.html">
+<meta property="og:site_name" content="墨迹’  Blog">
+<meta property="article:published_time" content="2019-12-24T08:02:26.400Z">
+<meta property="article:modified_time" content="2019-12-24T08:02:26.399Z">
+<meta property="article:author" content="Ben">
+<meta property="article:tag" content="后端工程师">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content=" Python">
+<meta property="article:tag" content=" 量化爱好者">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1" ></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.0.1" ></script>
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value="">
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg" />
+</a>
+<div class="author">
+    <span>Ben</span>
+</div>
+
+<div class="icon">
+    
+        
+        <a title="rss" href="/atom.xml" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-rss"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="github" href="https://github.com/yelog" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="facebook" href="https://www.facebook.com/faker.tops" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-facebook"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+        
+        <a title="instagram" href="https://www.facebook.com/faker.tops" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-instagram"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="reddit" href="https://www.reddit.com/user/yelog/" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-reddit"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="weibo" href="http://weibo.com/u/2307534817" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-weibo"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="jianshu" href="https://www.jianshu.com/u/ff56736de7cf" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-jianshu"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="zhihu" href="https://www.zhihu.com/people/jaytp/activities" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-zhihu"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+        <a title="oschina" href="https://my.oschina.net/yelog" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-oschina"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+        <a title="email" href="mailto:jaytp@qq.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="qq" href="http://wpa.qq.com/msgrd?v=3&uin=872336115&site=qq&menu=yes" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-qq"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="kugou" href="https://www.kugou.com/" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-kugou"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="neteasemusic" href="https://music.163.com/#/user/home?id=88151013" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-neteasemusic"></use>
+                </svg>
+            
+        </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章<small>(14)</small></div></li>
+    
+        
+            
+            <li><div data-rel="工具">工具<small>(4)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="Python">Python<small>(2)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="思想">思想<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="Mysql">Mysql<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="Java">Java<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div><a class="about  hasFriend  site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="14">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode==13){return false;}">
+        <input class="search" type="text" placeholder="以 in: 开头进行全文搜索" autocomplete="off"id="local-search-input" >
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a class="color4">git</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">工具</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">polysh</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">Anaconda</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">Python</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">hexo</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">思想</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">pyenv virtualenv Python</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">mysql</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">编码</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">RPC</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">thrift</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">VirtualBox</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">ubuntu</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">虚拟机</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">网络配置</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">脚本</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">3-hexo</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <div id="local-search-result">
+
+    </div>
+    
+    <nav id="title-list-nav">
+        
+        <a  class="工具 "
+           href="/2017/03/31/Git%E7%9A%84%E4%BD%BF%E7%94%A8/"
+           data-tag="git,工具"
+           data-author="" >
+            <span class="post-title" title="Git的使用">Git的使用</span>
+            <span class="post-date" title="2017-03-31 19:57:46">2017/03/31</span>
+        </a>
+        
+        <a  class="工具 "
+           href="/2017/03/22/polysh%E6%9F%A5%E7%9C%8B%E5%A4%9A%E5%8F%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E6%97%A5%E5%BF%97/"
+           data-tag="polysh"
+           data-author="" >
+            <span class="post-title" title="polysh查看多台服务器的日志">polysh查看多台服务器的日志</span>
+            <span class="post-date" title="2017-03-22 14:58:09">2017/03/22</span>
+        </a>
+        
+        <a  class="Python "
+           href="/2017/04/10/Anaconda%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/"
+           data-tag="Anaconda,Python"
+           data-author="" >
+            <span class="post-title" title="Anaconda的安装和使用">Anaconda的安装和使用</span>
+            <span class="post-date" title="2017-04-10 14:47:52">2017/04/10</span>
+        </a>
+        
+        <a  class="工具 "
+           href="/2017/04/01/Hexo%E5%BB%BA%E7%AB%99%E8%AE%B0%E5%BD%95/"
+           data-tag="hexo"
+           data-author="" >
+            <span class="post-title" title="Hexo建站记录">Hexo建站记录</span>
+            <span class="post-date" title="2017-04-01 16:39:36">2017/04/01</span>
+        </a>
+        
+        <a  class="思想 "
+           href="/2017/03/22/%E5%B7%A8%E5%A9%B4/"
+           data-tag="思想"
+           data-author="" >
+            <span class="post-title" title="巨婴">巨婴</span>
+            <span class="post-date" title="2017-03-22 17:46:43">2017/03/22</span>
+        </a>
+        
+        <a  class="Python "
+           href="/2017/04/06/%E4%BD%BF%E7%94%A8pyenv-virtualenv%E6%89%93%E9%80%A0%E5%A4%9A%E7%89%88%E6%9C%ACPython%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/"
+           data-tag="pyenv virtualenv Python"
+           data-author="" >
+            <span class="post-title" title="使用pyenv+virtualenv打造多版本Python开发环境">使用pyenv+virtualenv打造多版本Python开发环境</span>
+            <span class="post-date" title="2017-04-06 15:01:25">2017/04/06</span>
+        </a>
+        
+        <a  class="Mysql "
+           href="/2017/04/05/Mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E7%BC%96%E7%A0%81%E9%97%AE%E9%A2%98%E4%BF%AE%E6%94%B9/"
+           data-tag="mysql,编码"
+           data-author="" >
+            <span class="post-title" title="Mysql数据库编码问题修改">Mysql数据库编码问题修改</span>
+            <span class="post-date" title="2017-04-05 13:19:10">2017/04/05</span>
+        </a>
+        
+        <a  class="Java "
+           href="/2017/09/02/Thrift%E7%AE%80%E4%BB%8B/"
+           data-tag="RPC,thrift"
+           data-author="" >
+            <span class="post-title" title="Thrift简介">Thrift简介</span>
+            <span class="post-date" title="2017-09-02 21:06:41">2017/09/02</span>
+        </a>
+        
+        <a  class=""
+           href="/2017/10/16/VirtualBox%E6%90%AD%E5%BB%BAUbuntu%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%9B%86%E7%BE%A4/"
+           data-tag="VirtualBox,ubuntu,虚拟机,网络配置"
+           data-author="" >
+            <span class="post-title" title="VirtualBox搭建Ubuntu虚拟机集群">VirtualBox搭建Ubuntu虚拟机集群</span>
+            <span class="post-date" title="2017-10-16 20:28:52">2017/10/16</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/01/06/Python%E8%84%9A%E6%9C%AC%E5%AE%9E%E7%8E%B0%E6%89%87%E8%B4%9D%E5%8D%95%E8%AF%8D%E6%89%B9%E9%87%8F%E6%B7%BB%E5%8A%A0/"
+           data-tag="脚本"
+           data-author="" >
+            <span class="post-title" title="Python脚本实现扇贝单词批量添加">Python脚本实现扇贝单词批量添加</span>
+            <span class="post-date" title="2019-01-06 13:08:39">2019/01/06</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/01/10/cat-springboot%E5%88%9D%E4%BD%93%E9%AA%8C/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="cat+springboot初体验">cat+springboot初体验</span>
+            <span class="post-date" title="2019-01-10 00:02:47">2019/01/10</span>
+        </a>
+        
+        <a  class="工具 "
+           href="/2019/12/24/%E5%9B%BE%E7%89%87%E6%B5%8B%E8%AF%95/"
+           data-tag="hexo,3-hexo"
+           data-author="" >
+            <span class="post-title" title="图片测试">图片测试</span>
+            <span class="post-date" title="2019-12-24 16:15:03">2019/12/24</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/01/11/%E8%BD%AF%E4%BB%B6%E9%A1%B9%E7%9B%AE%E4%BA%A4%E6%8E%A5%E6%98%8E%E7%BB%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="软件项目交接明细">软件项目交接明细</span>
+            <span class="post-date" title="2019-01-11 12:41:28">2019/01/11</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/12/25/test/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="test">test</span>
+            <span class="post-date" title="2019-12-25 21:17:41">2019/12/25</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-cat-springboot初体验" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">cat+springboot初体验</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2019-12-24 22:28:44'>2019-01-10 00:02</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#项目介绍"><span class="toc-text">项目介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#实战"><span class="toc-text">实战</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Cat服务器部署"><span class="toc-text">1. Cat服务器部署</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1容器构建"><span class="toc-text">1.1容器构建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-创建表"><span class="toc-text">1.2 创建表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-配置"><span class="toc-text">1.3 配置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-创建SpringBoot-项目"><span class="toc-text">2. 创建SpringBoot 项目</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-通过maven添加依赖-另一种方式是直接下载cat-client-3-0-0-jar包"><span class="toc-text">2.1 通过maven添加依赖(另一种方式是直接下载cat-client-3.0.0.jar包)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-准备工作"><span class="toc-text">2.2 准备工作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#准备工作1"><span class="toc-text">准备工作1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#准备工作2"><span class="toc-text">准备工作2</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-API-list"><span class="toc-text">3. API list</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#成功事件"><span class="toc-text">成功事件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#失败事件"><span class="toc-text">失败事件</span></a></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><div class='inner-toc'><h2>目录</h2><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#项目介绍"><span class="toc-text">项目介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#实战"><span class="toc-text">实战</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Cat服务器部署"><span class="toc-text">1. Cat服务器部署</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1容器构建"><span class="toc-text">1.1容器构建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-创建表"><span class="toc-text">1.2 创建表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-配置"><span class="toc-text">1.3 配置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-创建SpringBoot-项目"><span class="toc-text">2. 创建SpringBoot 项目</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-通过maven添加依赖-另一种方式是直接下载cat-client-3-0-0-jar包"><span class="toc-text">2.1 通过maven添加依赖(另一种方式是直接下载cat-client-3.0.0.jar包)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-准备工作"><span class="toc-text">2.2 准备工作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#准备工作1"><span class="toc-text">准备工作1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#准备工作2"><span class="toc-text">准备工作2</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-API-list"><span class="toc-text">3. API list</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#成功事件"><span class="toc-text">成功事件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#失败事件"><span class="toc-text">失败事件</span></a></li></ol></div></p>
+<h1 id="项目介绍"><a href="#项目介绍" class="headerlink" title="项目介绍"></a>项目介绍</h1><p><a href="https://github.com/dianping/cat">项目地址</a><br>介绍：</p>
+<blockquote>
+<p>cat是大众点评开源的一套基于java的实时应用监控平台，主要应用于服务中间件框架（MVC 框架、RPC 框架、持久层框架、分布式缓存框架）的监控，为开发和运维提供各项性能指标、健康检查、自动报警等可视化服务。</p>
+</blockquote>
+<h1 id="实战"><a href="#实战" class="headerlink" title="实战"></a>实战</h1><blockquote>
+<p>关于项目介绍的文章已经很多了，现在想办法把服务搭建起来，看看项目效果如何，是否能达到自己的项目需求。未来方便起见，使用docker部署。</p>
+</blockquote>
+<p>我的机器配置(腾讯云主机)：</p>
+<ul>
+<li>1c2g</li>
+<li>Centos 7</li>
+<li>Docker version 18.09.0, build 4d60db4</li>
+</ul>
+<h2 id="1-Cat服务器部署"><a href="#1-Cat服务器部署" class="headerlink" title="1. Cat服务器部署"></a>1. Cat服务器部署</h2><h3 id="1-1容器构建"><a href="#1-1容器构建" class="headerlink" title="1.1容器构建"></a>1.1容器构建</h3><p>先把项目从github拉取下来，进入到 <code>docker</code>目录，启动容器。(暂时只考虑单机部署), 这个构建过程可能需要20分钟左右。 </p>
+<pre><code>git clone https://github.com/dianping/cat.git
+cd ./cat/docker
+docker-compose up</code></pre><p>安装过程遇见的问题：<br>1.数据库并没有启动起来</p>
+<pre><code>cat-mysql | Initializing database
+cat-mysql | mysqld: Can&#39;t create/write to file &#39;/var/lib/mysql/is_writable&#39; (Errcode: 13 - Permission denied)
+cat-mysql | 2019-01-06T08:15:45.931202Z 0 [Warning] TIMESTAMP with implicit DEFAULT value is deprecated. Please use --explicit_defaults_for_timestamp server option (see documentation for more details).
+cat-mysql | 2019-01-06T08:15:45.932753Z 0 [ERROR] --initialize specified but the data directory exists and is not writable. Aborting.
+cat-mysql | 2019-01-06T08:15:45.932773Z 0 [ERROR] Aborting</code></pre><p>网上查了好多方法，试了下，都没怎么解决，最后修改<code>docker-compose.yml</code>文件，把<code>mysql</code>换成了<code>mariadb</code>数据库。</p>
+<pre><code> mysql:
+    container_name: cat-mysql
+    image: mariadb:10.2
+    # expose 33306 to client (navicat)
+    # user: &quot;1000:50&quot;
+    # user: &quot;1000&quot;
+    ports:
+       - 33306:3306
+    volumes:
+      # change &#39;./docker/mysql/volume&#39; to your own path
+      # WARNING: without this line, your data will be lost.
+      - &quot;./mysql/volume:/var/lib/mysql/data&quot;
+      # 第一次启动，可以通过命令创建数据库表 ：
+      # docker exec 容器id bash -c &quot;mysql -uroot -Dcat &lt; /init.sql&quot;
+      - &quot;../script/CatApplication.sql:/init.sql&quot;
+    # command: mysqld -uroot --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --init-connect=&#39;SET NAMES utf8mb4&#39; --innodb-flush-log-at-trx-commit=0
+    command: mysqld -uroot --character-set-server=utf8mb4
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+      - MYSQL_DATABASE=cat
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=
+</code></pre><p>启动成功后通过<code>docker ps</code>会有两个容器启动</p>
+<pre><code> ➜  docker git:(master) ✗ docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                                            NAMES
+869de049e824        docker_cat          &quot;/bin/sh -c &#39;chmod +…&quot;   30 hours ago        Up 30 hours         0.0.0.0:2280-&gt;2280/tcp, 0.0.0.0:8080-&gt;8080/tcp   cat
+695b3745e4b3        mariadb:10.2        &quot;docker-entrypoint.s…&quot;   30 hours ago        Up 30 hours         0.0.0.0:33306-&gt;3306/tcp                          cat-mysql</code></pre><h3 id="1-2-创建表"><a href="#1-2-创建表" class="headerlink" title="1.2 创建表"></a>1.2 创建表</h3><pre><code># 进入mariadb 容器里面，查init.sql 文件是否存在
+➜  docker git:(master) ✗ docker exec -it 695b3745e4b3  /bin/bash
+root@695b3745e4b3:/# ls -l
+-rw-rw-r--   1 1000 1000 15120 Jan  5 05:02 init.sql
+# 退出容器，创建数据库表
+root@695b3745e4b3:/# exit
+➜  docker git:(master) ✗ docker exec 695b3745e4b3 bash -c &quot;mysql -uroot -Dcat &lt; /init.sql&quot;</code></pre><h3 id="1-3-配置"><a href="#1-3-配置" class="headerlink" title="1.3 配置"></a>1.3 配置</h3><ul>
+<li>登录：<a href="http://211.159.147.25:8080/cat/s/login">http://211.159.147.25:8080/cat/s/login</a> ，用户名：admin 密码：admin</li>
+<li>通过浏览器配置(进入到<code>Configs</code> -&gt; <code>全局系统配置</code> -&gt; <code>客户端路由</code>)<ul>
+<li>1 客户端路由路由配置(<strong>27.0.0.1 替换为你本机的实际的内网IP，比如说192.168.1.1</strong>)</li>
+<li>服务端配置 (<code>控制台</code>,<code>消费机</code>,<code>告警端</code>,<code>任务机</code>)</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-创建SpringBoot-项目"><a href="#2-创建SpringBoot-项目" class="headerlink" title="2. 创建SpringBoot 项目"></a>2. 创建SpringBoot 项目</h2><h3 id="2-1-通过maven添加依赖-另一种方式是直接下载cat-client-3-0-0-jar包"><a href="#2-1-通过maven添加依赖-另一种方式是直接下载cat-client-3-0-0-jar包" class="headerlink" title="2.1 通过maven添加依赖(另一种方式是直接下载cat-client-3.0.0.jar包)"></a>2.1 通过maven添加依赖(另一种方式是直接下载cat-client-3.0.0.jar包)</h3><blockquote>
+<p>通过<a href="https://mvnrepository.com/artifact/com.dianping.cat/cat-client">mvnrepository  cat-client</a>只有<code>3.0.0</code>版本，引用的过程发现找不到这个包，<code>又去看了cat源码的pom.xml文件</code>，发现是增加了<code>repositories</code>依赖。</p>
+</blockquote>
+<pre><code class="xml">&lt;dependency&gt;
+    &lt;groupId&gt;com.dianping.cat&lt;/groupId&gt;
+    &lt;artifactId&gt;cat-client&lt;/artifactId&gt;
+    &lt;version&gt;${cat.version}&lt;/version&gt;
+&lt;/dependency&gt;
+
+ &lt;repositories&gt;
+    &lt;repository&gt;
+      &lt;id&gt;central&lt;/id&gt;
+      &lt;name&gt;Maven2 Central Repository&lt;/name&gt;
+      &lt;layout&gt;default&lt;/layout&gt;
+      &lt;url&gt;http://repo1.maven.org/maven2&lt;/url&gt;
+    &lt;/repository&gt;
+    &lt;repository&gt;
+      &lt;id&gt;unidal.releases&lt;/id&gt;
+      &lt;url&gt;http://unidal.org/nexus/content/repositories/releases/&lt;/url&gt;
+    &lt;/repository&gt;
+  &lt;/repositories&gt;
+  &lt;pluginRepositories&gt;
+    &lt;pluginRepository&gt;
+      &lt;id&gt;central&lt;/id&gt;
+      &lt;url&gt;http://repo1.maven.org/maven2&lt;/url&gt;
+    &lt;/pluginRepository&gt;
+    &lt;pluginRepository&gt;
+      &lt;id&gt;unidal.releases&lt;/id&gt;
+      &lt;url&gt;http://unidal.org/nexus/content/repositories/releases/&lt;/url&gt;
+    &lt;/pluginRepository&gt;
+  &lt;/pluginRepositories&gt;
+</code></pre>
+<h3 id="2-2-准备工作"><a href="#2-2-准备工作" class="headerlink" title="2.2 准备工作"></a>2.2 准备工作</h3><h3 id="准备工作1"><a href="#准备工作1" class="headerlink" title="准备工作1"></a>准备工作1</h3><blockquote>
+<p><code>cat-client</code> 要去<code>/data/appdatas/cat/client.xml</code> 找服务，进行数据上报。线上环境，应该由运维人员专人负责。<br>mac 开发环境下，需要先修改写的权限，<code>chmod -R 777 /data</code></p>
+</blockquote>
+<ul>
+<li>创建 /data/appdatas/cat 目录，具有读写权限。</li>
+<li>创建 /data/applogs/cat 目录 (可选)</li>
+<li>创建 /data/appdatas/cat/client.xml<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;config xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema&quot; xsi:noNamespaceSchemaLocation=&quot;config.xsd&quot;&gt;
+  &lt;servers&gt;
+      &lt;server ip=&quot;&lt;cat server ip address&gt;&quot; port=&quot;2280&quot; http-port=&quot;8080&quot; /&gt;
+  &lt;/servers&gt;
+&lt;/config&gt;
+&lt;!-- 不要忘记把 `&lt;cat server IP address&gt;`替换成你自己的服务器地址哦！ --&gt;</code></pre></li>
+</ul>
+<h3 id="准备工作2"><a href="#准备工作2" class="headerlink" title="准备工作2"></a>准备工作2</h3><p>项目中创建 <code>src/main/resources/META-INF/app.properties</code>文件, 通过<code>app.name</code> 在 搜索对应的项目，这个也是必须得，在启动的时候会报错。</p>
+<pre><code>app.name={appkey}</code></pre><blockquote>
+<p>对于项目启动的过程中出现的问题，可以通过<code>tail -f /data/applogs/cat/cat_client_.log</code> 查看对应日志，可以方便定位出现的问题。</p>
+</blockquote>
+<h2 id="3-API-list"><a href="#3-API-list" class="headerlink" title="3. API list"></a>3. API list</h2><ul>
+<li>Transaction<br>如果不用<code>URL集成组件</code>，手动添加埋点，模板代码如下<pre><code>// 创建一个Transaction, `HelloController`看做一个类，一个类下面 `hello`具体方法
+Transaction transaction = Cat.newTransaction(&quot;HelloController&quot;, &quot;hello&quot;);
+</code></pre></li>
+</ul>
+<p>try {<br>    // 具体业务代码<br>    t.setStatus(Transaction.SUCCESS);<br>} catch (Exception e) {<br>    t.setStatus(e);<br>    Cat.logError(e);<br>} finally {<br>    t.complete();<br>}</p>
+<pre><code>
+![](transaction.png)
+
+* Event  记录事件</code></pre><h1 id="成功事件"><a href="#成功事件" class="headerlink" title="成功事件"></a>成功事件</h1><p>Cat.logEvent(“URL.Server”, “serverIp”);<br>Cat.logEvent(“URL.Server”, “serverIp”, Event.SUCCESS, “ip=${serverIp}”);</p>
+<h1 id="失败事件"><a href="#失败事件" class="headerlink" title="失败事件"></a>失败事件</h1><p>Cat.logError(e);</p>
+<pre><code>* Metric (监控业务指标)</code></pre><p>Cat.logMetricForCount(“register”);<br>Cat.logMetricForCount(“UserCount”, 3);<br>Cat.logMetricForDuration(“UserCount”, 3);</p>
+<pre><code>
+## 4. demo中使用到的 [集成组件](https://github.com/dianping/cat/tree/master/integration) 
+
+&gt;  这里面有一些集成的组件，可参考使用
+
+* [URL监控埋点](https://github.com/dianping/cat/tree/master/integration/URL) : http请求过来会自动打点，记录所有的HTTP请求，即使错误的请求也会记录，
+  - 对 shop/1 shop/2 都会自动归类到 /shop/{num}
+  - shop/v1 shop/v2 等不会自动到/shop/v{num}
+
+* [Log4j2配置](https://github.com/dianping/cat/tree/master/integration/log4j2)
+
+## CAT报表
+* [Transaction报表](https://github.com/dianping/cat/blob/master/cat-doc/posts/ch1-report/transaction.md): 监控一段代码 `运行次数`，`OPS`，`错误次数`，`失败率`，`响应时间统计（平均影响时间、Tp分位值）`等等。
+![](Transaction报表.png)
+
+* [Event报表](https://github.com/dianping/cat/blob/master/cat-doc/posts/ch1-report/event.md): 同样监听一段代码的运行次数，和Transaction表表功能类似，缺少相应时间的统计。
+* [Problem报表](https://github.com/dianping/cat/blob/master/cat-doc/posts/ch1-report/problem.md) 对一些异常，错误，响应时间过长（如：慢查询，网络延迟高），系统性能排查有用。
+![](Problem报表.png)
+* [Heartbeat报表](https://github.com/dianping/cat/blob/master/cat-doc/posts/ch1-report/heartbeat.md): 机器信息，JVM状态信息
+![](Heartbeat报表.png)
+
+* [Business报表](https://github.com/dianping/cat/blob/master/cat-doc/posts/ch1-report/business.md)： 偏重`业务指标`, 如`订单数`，`新注册用户数`
+![](Business报表.png)
+
+
+[项目源代码 cat-spring-boot-demo](https://github.com/cuijianlong/cat-spring-boot-demo)
+
+# 参考
+1. [Githup 介绍](https://github.com/dianping/cat)
+2. [Docker 启动部分参考](https://github.com/dianping/cat/blob/master/cat-doc/posts/ch4-server/README.md)
+3. [大众点评Cat监控系统的部署与操作说明](https://my.oschina.net/yanyimin/blog/1517724)
+4. [MySQL docker 5.7.6 and later fails to initialize database](https://github.com/docker-library/mysql/issues/69)
+5. [美团开源监控框架CAT-Spring Boot Demo](https://blog.csdn.net/chentravelling/article/details/84780086)
+6. [深度剖析开源分布式监控CAT](https://tech.meituan.com/CAT_in_Depth_Java_Application_Monitoring.html)
+7. [Cat 在线demo](http://unidal.org/cat/s/config?op=projects)  user: admin  pw: admin</code></pre>
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>cat+springboot初体验</p>
+    
+    <p><span class="copy-title">本文作者:</span><a  title="Ben">Ben</a></p>
+    <p><span class="copy-title">发布时间:</span>2019-01-10, 00:02:47</p>
+    <p><span class="copy-title">最后更新:</span>2019-12-24, 22:28:44</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/01/10/cat-springboot%E5%88%9D%E4%BD%93%E9%AA%8C/" title="cat+springboot初体验">http://cuijianlong.github.io/2019/01/10/cat-springboot%E5%88%9D%E4%BD%93%E9%AA%8C/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+    <div id="comments"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+<script type="text/javascript">
+    $.getScript('/js/gitalk.js', function () {
+        var gitalk = new Gitalk({
+            clientID: 'eef0b7615722b442b1cf',
+            clientSecret: 'dd10df5c5758d51d35f7fc70aeb37210f802e430',
+            repo: 'cuijiannlong.github.io',
+            owner: 'cuijianlong',
+            admin: ['cuijianlong'],
+            id: decodeURI(location.pathname),
+            distractionFreeMode: 'true',
+            language: 'zh-CN',
+            perPage: parseInt('10',10)
+        })
+        gitalk.render('comments')
+    })
+</script>
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2016-2019 cuijianlong</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+<div class="acParent"></div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.0.1" ></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#git','#工具','#polysh','#Anaconda','#Python','#hexo','#思想','#pyenv virtualenv Python','#mysql','#编码','#RPC','#thrift','#VirtualBox','#ubuntu','#虚拟机','#网络配置','#脚本','#3-hexo',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().split('\n').length - 1, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+        /* 渲染*/
+        function HTMLDecode(text) {
+            var temp = document.createElement("div");
+            temp.innerHTML = text;
+            var output = temp.innerText || temp.textContent;
+            temp = null;
+            return output;
+        }
+        if (window.mermaid){
+            window.mermaid = null
+        }
+        $.getScript("//cdn.jsdelivr.net/npm/mermaid@8.4.2/dist/mermaid.min.js", function () {
+            var mermaidOptions = JSON.parse(HTMLDecode("{&quot;theme&quot;:&quot;default&quot;,&quot;startOnLoad&quot;:true,&quot;flowchart&quot;:{&quot;useMaxWidth&quot;:false,&quot;htmlLabels&quot;:true}}"))
+            if (window.mermaid) {
+                mermaid.initialize(mermaidOptions)
+                mermaid.contentLoaded()
+            }
+        })
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: #fafafa;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("https://i.loli.net/2019/07/22/5d3521411f3f169375.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>
